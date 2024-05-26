@@ -43,7 +43,6 @@ transform = Transform3D(-2, 1.74846e-07, 0, -1.74846e-07, -2, 0, 0, 0, 2, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926379, 0)
 
 [node name="EyeCamera" type="Camera3D" parent="Head"]
-transform = Transform3D(0.997263, 0, 0.0739344, 0, 1, 0, -0.0739344, 0, 0.997263, 0, 0, 0)
 fov = 90.0
 
 [node name="Guns" type="Node3D" parent="Head/EyeCamera"]

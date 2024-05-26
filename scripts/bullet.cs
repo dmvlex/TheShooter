@@ -36,8 +36,18 @@ public partial class bullet : Node3D
         Position += Transform.Basis * vec;
 		if (BulletRayCast.IsColliding())
 		{
+            var collider = (StaticBody3D)BulletRayCast.GetCollider();
+
+            if (collider.IsInGroup("targets"))
+            {
+                var gui = (GUI)GetTree().CurrentScene.GetNode("Gui");
+                gui.Points += 1;
+            }
+
 			BulletMash.Visible = false;
 			Particles.Emitting = true;
+
+            
 		}
     }
 

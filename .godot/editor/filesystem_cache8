@@ -35,7 +35,7 @@ texture_10.png::CompressedTexture2D::1720499290594141332::1716758385::1716758386
 texture_11.png::CompressedTexture2D::5628442454727883835::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::815910176468837793::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::2126660640644497195::1716758385::1716758386::1::::<><>::
-::res://resourses/textures/Light/::1716758386
+::res://resourses/textures/Light/::1716758698
 texture_01.png::CompressedTexture2D::2244453376978513861::1716758385::1716758386::1::::<><>::
 texture_02.png::CompressedTexture2D::6316465319865325270::1716758385::1716758386::1::::<><>::
 texture_03.png::CompressedTexture2D::44262646063881441::1716758385::1716758386::1::::<><>::
@@ -69,7 +69,7 @@ texture_02.png::CompressedTexture2D::1273365406546600114::1716758385::1716758386
 texture_03.png::CompressedTexture2D::4329585261556157497::1716758385::1716758386::1::::<><>::
 texture_04.png::CompressedTexture2D::8407415351398326684::1716758385::1716758386::1::::<><>::
 texture_05.png::CompressedTexture2D::4039327049803727721::1716758385::1716758386::1::::<><>::
-texture_06.png::CompressedTexture2D::43978620678533686::1716758385::1716758386::1::::<><>::
+texture_06.png::CompressedTexture2D::43978620678533686::1716758385::1716761447::1::::<><>::
 texture_07.png::CompressedTexture2D::4323936129364488012::1716758385::1716758386::1::::<><>::
 texture_08.png::CompressedTexture2D::1778436626952223174::1716758385::1716758386::1::::<><>::
 texture_09.png::CompressedTexture2D::6801228845218683527::1716758385::1716758386::1::::<><>::
@@ -91,15 +91,15 @@ texture_10.png::CompressedTexture2D::2081907834566225019::1716758385::1716758386
 texture_11.png::CompressedTexture2D::6719989304273588430::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::9162053228590132897::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::3023571368818307125::1716758385::1716758386::1::::<><>::
-::res://scenes/::1716758637
-FPC.tscn::PackedScene::8388123890315583824::1716758637::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
-bullet.tscn::PackedScene::4416653123451718343::1716758637::0::1::::<><>::res://scripts/bullet.cs
-Sifi_gun.tscn::PackedScene::537494382735786680::1716758637::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
+::res://scenes/::1716761321
+FPC.tscn::PackedScene::8388123890315583824::1716761321::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
+bullet.tscn::PackedScene::4416653123451718343::1716761298::0::1::::<><>::res://scripts/bullet.cs
+Sifi_gun.tscn::PackedScene::537494382735786680::1716761298::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
 steampunkRifle.tscn::PackedScene::6926627145066211996::1716750629::0::1::::<><>::uid://na4pgu5t2h0s::::res://resourses/objects/Steampunk Rifle.glb
-world.tscn::PackedScene::9053354938371423726::1716758682::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://d0tlun7kokyjp::::res://resourses/textures/Green/texture_09.png<>uid://p54555wg4xus::::res://resourses/textures/Dark/texture_08.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs
-::res://scripts/::1716757966
-FPC.cs::CSharpScript::-1::1716747965::0::1::::<>CharacterBody3D<>::
+world.tscn::PackedScene::9053354938371423726::1716761298::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://b4ceic8hekhio::::res://resourses/textures/Light/texture_07.png<>uid://p54555wg4xus::::res://resourses/textures/Dark/texture_08.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs
+::res://scripts/::1716761109
+FPC.cs::CSharpScript::-1::1716761109::0::1::::<>CharacterBody3D<>::
 PlayerMovement.cs::CSharpScript::-1::1716748377::0::1::::<><>::
 PlayerMovementConfig.cs::CSharpScript::-1::1716752354::0::1::::PlayerMovementConfig<>Resource<>::
-bullet.cs::CSharpScript::-1::1716757966::0::1::::<>Node3D<>::
+bullet.cs::CSharpScript::-1::1716760666::0::1::::<>Node3D<>::
 World.cs::CSharpScript::-1::1716733891::0::1::::<>Node3D<>::

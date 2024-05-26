@@ -10,7 +10,7 @@ public class PlayerMovement
     private float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 
-    
+    private bool shootBlock = false;
     private float shakingTime = 0.0f;
     private float default_head_y = 1.04f;
     private float currentSpeed = 0f;
@@ -63,6 +63,7 @@ public class PlayerMovement
     {
         var root = config.RootNode;
         var fdelta = (float)delta;
+        var gun = (Node3D)gunsCollection.ToArray()[0];
 
         Vector3 velocity = root.Velocity;
         // Add the gravity.
@@ -74,20 +75,33 @@ public class PlayerMovement
         if (!topRayCast.IsColliding() && !isSneak)
         {
             StandUp(fdelta);
-            Run(fdelta);
+            Run(fdelta, gun);
             Jump(root, ref velocity);
         }
 
         Walk(root, ref velocity, fdelta);
         ShakeCamera(fdelta, ref velocity, root);
 
-        Shoot((Node3D)gunsCollection.ToArray()[0], root);
+        Shoot(gun, root);
+        Reload(gun);
 
         root.MoveAndSlide();
     }
 
+    private void Reload(Node3D Gun)
+    {
+        var animation = Gun.GetNode<AnimationPlayer>("Animation");
+        if (Input.IsActionJustPressed("Reload"))
+        {
+            shootBlock = true;
+            animation.Play("reload");
+            shootBlock = false;
+        }
+    }
     private void Shoot(Node3D Gun, CharacterBody3D root)
     {
+        if (shootBlock) return;
+
         var animation = Gun.GetNode<AnimationPlayer>("Animation");
         var barrel = Gun.GetNode<RayCast3D>("BarrelRayCast");
         if (Input.IsActionPressed("Shoot") && !animation.IsPlaying())
@@ -131,8 +145,9 @@ public class PlayerMovement
             velocity.Y = config.JumpVelocity;
         }
     }
-    private void Run(float fdelta)
+    private void Run(float fdelta, Node3D Gun)
     {
+        var animation = Gun.GetNode<AnimationPlayer>("Animation");
         if (Input.IsActionPressed("Run"))
         {
             currentSpeed = config.SprintSpeed;

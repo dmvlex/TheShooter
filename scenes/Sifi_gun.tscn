@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://hwmpo1icm0n1"]
+[gd_scene load_steps=7 format=3 uid="uid://hwmpo1icm0n1"]
 
 [ext_resource type="PackedScene" uid="uid://b6e564eya223q" path="res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb" id="1_yi4la"]
 
@@ -37,8 +37,24 @@ tracks/1/keys = {
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0.0523599), Vector3(0, 1.5708, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ai8ay"]
+resource_name = "reload"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/Magazine:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.303315, 0.0505526, 6.79218e-09), Vector3(-1, -1, 0), Vector3(0.303, -1, 0), Vector3(0.303, 0.051, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7sscx"]
 _data = {
+"reload": SubResource("Animation_ai8ay"),
 "shoot": SubResource("Animation_av3we")
 }
 
