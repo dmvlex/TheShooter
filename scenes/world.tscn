@@ -1,8 +1,63 @@
-[gd_scene format=3 uid="uid://d18royxqhjx55"]
+[gd_scene load_steps=8 format=3 uid="uid://d18royxqhjx55"]
+
+[ext_resource type="PackedScene" uid="uid://drrjf7imlsqro" path="res://scenes/FPC.tscn" id="1_ndbmi"]
+[ext_resource type="Script" path="res://scripts/World.cs" id="1_t343o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nx5rh"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_l83i1"]
+sky_material = SubResource("ProceduralSkyMaterial_nx5rh")
+
+[sub_resource type="Environment" id="Environment_82d5r"]
+background_mode = 2
+sky = SubResource("Sky_l83i1")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t82vn"]
+albedo_color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb3ji"]
+albedo_color = Color(1, 0.203922, 0.0235294, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_t343o")
+
+[node name="Enviroment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_82d5r")
 
 [node name="Level" type="Node3D" parent="."]
 
 [node name="floor" type="CSGBox3D" parent="Level"]
 transform = Transform3D(200, 0, 0, 0, 0.5, 0, 0, 0, 200, 0, -0.25, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_t82vn")
+
+[node name="box" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314497, 2.15773, -4.12835)
+use_collision = true
+material = SubResource("StandardMaterial3D_mb3ji")
+
+[node name="wall" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 20, -9.91709, 2.06848, -1.80863)
+use_collision = true
+
+[node name="wall2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 20, 10.9453, 2.06848, -1.80863)
+use_collision = true
+
+[node name="wall3" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.00434584, 0, -19.9998, 0, 10, 0, 0.999991, 0, 0.0869167, 0.589918, 2.06848, -10.979)
+use_collision = true
+
+[node name="wall4" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.00434584, 0, -19.9998, 0, 10, 0, 0.999991, 0, 0.0869167, 0.589918, 2.06848, 8.34304)
+use_collision = true
+
+[node name="FPC" parent="." instance=ExtResource("1_ndbmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969338, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0718805, 0.997413, 0, -0.997413, 0.0718805, 0, 180.087, 0)
