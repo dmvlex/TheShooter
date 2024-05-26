@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://drrjf7imlsqro"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dgjsi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xpkcq"]
+height = 1.52186
+
+[node name="FPC" type="CharacterBody3D"]
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dgjsi")
+
+[node name="CrounchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.244912, 0)
+shape = SubResource("CapsuleShape3D_xpkcq")
+disabled = true
+
+[node name="TopRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-2, 1.74846e-07, 0, -1.74846e-07, -2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926379, 0)
+
+[node name="EyeCamera" type="Camera3D" parent="Head"]
+fov = 90.0
