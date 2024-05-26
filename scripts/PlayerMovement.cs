@@ -1,20 +1,23 @@
 ﻿using Godot;
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-public class PlayerMovementMachine 
+public class PlayerMovement 
 {
 	private readonly PlayerMovementConfig config;
     private float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
-    private float fdelta;
-    private float t_bob = 0.0f;
+
+    
+    private float shakingTime = 0.0f;
     private float default_head_y = 1.04f;
     private float currentSpeed = 0f;
     private float crouching_depth = -0.5f;
 
 
     private Node3D head;
+    private IEnumerable<Node> gunsCollection;
     private Camera3D eyeCamera;
     private CollisionShape3D sneakCollision;
     private CollisionShape3D standCollision;
@@ -22,7 +25,7 @@ public class PlayerMovementMachine
 
     Vector3 direction = Vector3.Zero;
 
-    public PlayerMovementMachine(PlayerMovementConfig config)
+    public PlayerMovement(PlayerMovementConfig config)
     {
 		this.config = config;
 		GetPlayerNodes();
@@ -32,6 +35,7 @@ public class PlayerMovementMachine
 	{
         head = config.RootNode.GetNode<Node3D>("Head");
         eyeCamera = head.GetNode<Camera3D>("EyeCamera");
+        gunsCollection = eyeCamera.GetNode<Node3D>("Guns").GetChildren();
         standCollision = config.RootNode
             .GetNode<CollisionShape3D>("StandingCollisionShape");
         sneakCollision = config.RootNode
@@ -62,42 +66,71 @@ public class PlayerMovementMachine
         if (!root.IsOnFloor())
             velocity.Y -= gravity * fdelta;
 
+        var isSneak = Sneak(fdelta);
+
+        if (!topRayCast.IsColliding() && !isSneak)
+        {
+            StandUp(fdelta);
+            Run(fdelta);
+            Jump(root, ref velocity);
+        }
+
+        Walk(root, ref velocity, fdelta);
+        ShakeCamera(fdelta, ref velocity, root);
+
+        root.MoveAndSlide();
+    }
+
+    private bool Sneak(float fdelta)
+    {
         if (Input.IsActionPressed("Sneak"))
         {
             var a = default_head_y + crouching_depth;
             currentSpeed = config.SneakSpeed;
-            eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.BaseFOV - 15f, fdelta * 2.0f);
+            eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.MinFOV, fdelta * 2.0f);
             head.Position = new Vector3(head.Position.X, Mathf.Lerp(head.Position.Y, a, fdelta * config.LerpSpeed), head.Position.Z);
             standCollision.Disabled = true;
             sneakCollision.Disabled = false;
+            return true;
         }
-        else if (!topRayCast.IsColliding())
+        return false;
+    }
+    private void StandUp(float fdelta)
+    {
+        standCollision.Disabled = false;
+        sneakCollision.Disabled = true;
+        head.Position = new Vector3(head.Position.X,
+            Mathf.Lerp(head.Position.Y, default_head_y, fdelta * config.LerpSpeed), head.Position.Z);
+    }
+    private void Jump(CharacterBody3D root, ref Vector3 velocity)
+    {
+        // Handle Jump.
+        if (Input.IsActionJustPressed("Jump") && root.IsOnFloor())
         {
-            standCollision.Disabled = false;
-            sneakCollision.Disabled = true;
-            head.Position = new Vector3(head.Position.X,
-                Mathf.Lerp(head.Position.Y, default_head_y, fdelta * config.LerpSpeed), head.Position.Z);
-
-            if (Input.IsActionPressed("Run"))
-            {
-                currentSpeed = config.SprintSpeed;
-                eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.BaseFOV + 15f, fdelta * 2.0f);
-            }
-            else
-            {
-                eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.BaseFOV, fdelta * 2.0f); ;
-                currentSpeed = config.Speed;
-            }
-
-            // Handle Jump.
-            if (Input.IsActionJustPressed("Jump") && root.IsOnFloor())
-            {
-                velocity.Y = config.JumpVelocity;
-            }
+            velocity.Y = config.JumpVelocity;
         }
-
+    }
+    private void Run(float fdelta)
+    {
+        if (Input.IsActionPressed("Run"))
+        {
+            currentSpeed = config.SprintSpeed;
+            eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.MaxFOV, fdelta * 2.0f);
+        }
+        else
+        {
+            eyeCamera.Fov = Mathf.Lerp(eyeCamera.Fov, config.BaseFOV, fdelta * 2.0f); ;
+            currentSpeed = config.Speed;
+        }
+    }
+    private void Stop(ref Vector3 velocity)
+    {
+        velocity.Z = 0.0f; //Mathf.MoveToward(Velocity.Z, 0, Speed);
+        velocity.X = 0.0f; //Mathf.MoveToward(Velocity.X, 0, Speed);
+    }
+    private void Walk(CharacterBody3D root, ref Vector3 velocity, float fdelta)
+    {
         // Get the input direction and handle the movement/deceleration.
-        // As good practice, you should replace UI actions with custom gameplay actions.
         Vector2 inputDir = Input.GetVector("Move_Left", "Move_Right", "Move_Forward", "Move_Back");
 
 
@@ -119,20 +152,18 @@ public class PlayerMovementMachine
         }
         else
         {
-            velocity.Z = 0.0f; //Mathf.MoveToward(Velocity.Z, 0, Speed);
-            velocity.X = 0.0f; //Mathf.MoveToward(Velocity.X, 0, Speed);
+            Stop(ref velocity);
         }
 
         root.Velocity = velocity;
-
-
-        var floatIsOnFloor = root.IsOnFloor() ? 1f : 0f;
-
-        t_bob += fdelta * velocity.Length() * floatIsOnFloor;
-        eyeCamera.Position = HeadBob(t_bob);
-
-        root.MoveAndSlide();
     }
+    private void ShakeCamera(float fdelta, ref Vector3 velocity, CharacterBody3D root)
+    {
+        var floatIsOnFloor = root.IsOnFloor() ? 1f : 0f;
+        shakingTime += fdelta * velocity.Length() * floatIsOnFloor;
+        eyeCamera.Position = HeadBob(shakingTime);
+    }
+
     private Vector3 HeadBob(float time)
     {
         var pos = Vector3.Zero;

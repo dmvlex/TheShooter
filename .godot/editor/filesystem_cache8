@@ -1,10 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716733836
+::res://::1716749003
+::res://Properties/::1716734895
+launchSettings.json::JSON::-1::1716735844::0::1::::<><>::
 ::res://resourses/::1716733059
-::res://resourses/objects/::1716733059
+::res://resourses/objects/::1716750687
+Scifi Assault Rifle-j40c8VDdAQ.glb::PackedScene::4572410747330305164::1716750687::1716750687::1::::<><>::
+Steampunk Rifle.glb::PackedScene::914242894418934344::1716750524::1716750524::1::::<><>::
 ::res://resourses/textures/::1716733042
-::res://scenes/::1716733891
-FPC.tscn::PackedScene::8388123890315583824::1716733650::0::1::::<><>::
-World.cs::CSharpScript::-1::1716733891::0::1::::<><>::
-world.tscn::PackedScene::9053354938371423726::1716733684::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn
-::res://scripts/::1716731958
+::res://scenes/::1716750629
+FPC.tscn::PackedScene::8388123890315583824::1716748518::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs
+steampunkRifle.tscn::PackedScene::6926627145066211996::1716750629::0::1::::<><>::uid://na4pgu5t2h0s::::res://resourses/objects/Steampunk Rifle.glb
+world.tscn::PackedScene::9053354938371423726::1716748455::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs
+::res://scripts/::1716748377
+FPC.cs::CSharpScript::-1::1716747965::0::1::::<>CharacterBody3D<>::
+PlayerMovement.cs::CSharpScript::-1::1716748377::0::1::::<><>::
+PlayerMovementConfig.cs::CSharpScript::-1::1716745554::0::1::::PlayerMovementConfig<>Resource<>::
+World.cs::CSharpScript::-1::1716733891::0::1::::<>Node3D<>::

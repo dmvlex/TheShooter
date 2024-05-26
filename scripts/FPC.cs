@@ -6,14 +6,14 @@ public partial class FPC : CharacterBody3D
     #region redactor settings
     [Export]
     public PlayerMovementConfig playerConfig;
-	private PlayerMovementMachine movement;
+	private PlayerMovement movement;
     #endregion
 
     public override void _Ready()
     {
         base._Ready();
 		playerConfig.RootNode = this;
-		movement = new PlayerMovementMachine(playerConfig);
+		movement = new PlayerMovement(playerConfig);
 
         Input.MouseMode = Input.MouseModeEnum.Captured;
     }
