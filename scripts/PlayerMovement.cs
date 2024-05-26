@@ -1,6 +1,7 @@
 ﻿using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 public class PlayerMovement 
@@ -18,6 +19,7 @@ public class PlayerMovement
 
     private Node3D head;
     private IEnumerable<Node> gunsCollection;
+    private PackedScene bullet;
     private Camera3D eyeCamera;
     private CollisionShape3D sneakCollision;
     private CollisionShape3D standCollision;
@@ -33,6 +35,7 @@ public class PlayerMovement
 
 	private void GetPlayerNodes()
 	{
+        bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
         head = config.RootNode.GetNode<Node3D>("Head");
         eyeCamera = head.GetNode<Camera3D>("EyeCamera");
         gunsCollection = eyeCamera.GetNode<Node3D>("Guns").GetChildren();
@@ -78,9 +81,27 @@ public class PlayerMovement
         Walk(root, ref velocity, fdelta);
         ShakeCamera(fdelta, ref velocity, root);
 
+        Shoot((Node3D)gunsCollection.ToArray()[0], root);
+
         root.MoveAndSlide();
     }
 
+    private void Shoot(Node3D Gun, CharacterBody3D root)
+    {
+        var animation = Gun.GetNode<AnimationPlayer>("Animation");
+        var barrel = Gun.GetNode<RayCast3D>("BarrelRayCast");
+        if (Input.IsActionPressed("Shoot") && !animation.IsPlaying())
+        {
+            animation.Play("shoot");
+            var curBullet = bullet.Instantiate<Node3D>();
+            curBullet.Position = barrel.GlobalPosition;
+            Transform3D newBulletTransform = curBullet.Transform;
+            newBulletTransform.Basis = barrel.GlobalTransform.Basis;
+            curBullet.Transform = newBulletTransform;
+
+            root.GetParent().AddChild(curBullet);
+        }
+    }
     private bool Sneak(float fdelta)
     {
         if (Input.IsActionPressed("Sneak"))

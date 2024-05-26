@@ -47,4 +47,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926379, 0)
 [node name="Guns" type="Node3D" parent="Head/EyeCamera"]
 
 [node name="SifiGun" parent="Head/EyeCamera/Guns" instance=ExtResource("3_lx621")]
-transform = Transform3D(-0.0221116, 0, 0.999756, 0, 1, 0, -0.999756, 0, -0.0221116, 0.393257, -0.636214, -0.677922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08902, -0.636, -4.47295)

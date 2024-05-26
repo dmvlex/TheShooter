@@ -4,3 +4,5 @@ res://scenes/world.tscn
 res://scripts/FPC.cs
 res://scripts/PlayerMovementConfig.cs
 res://scripts/World.cs
+res://scenes/bullet.tscn
+res://scripts/bullet.cs
