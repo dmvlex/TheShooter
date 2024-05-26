@@ -1,5 +1,8 @@
-RayCast3D
 MeshInstance3D
+StaticBody3D
+Timer
+GPUParticles3D
+RayCast3D
 AnimationPlayer
 Node3D
 GPUParticlesCollisionSDF3D
@@ -9,4 +12,3 @@ DirectionalLight3D
 WorldEnvironment
 Camera3D
 CollisionShape3D
-CharacterBody3D

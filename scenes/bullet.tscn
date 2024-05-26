@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b36pvqg340auh"]
+[gd_scene load_steps=6 format=3 uid="uid://b36pvqg340auh"]
 
 [ext_resource type="Script" path="res://scripts/bullet.cs" id="1_hx4fg"]
 
@@ -11,8 +11,22 @@ emission_energy_multiplier = 7.0
 [sub_resource type="BoxMesh" id="BoxMesh_mspct"]
 material = SubResource("StandardMaterial3D_cxuon")
 
-[node name="Bullet" type="Node3D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_odgxj"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+turbulence_noise_strength = 20.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2vp6b"]
+material = SubResource("StandardMaterial3D_cxuon")
+size = Vector3(0.05, 0.05, 0.05)
+
+[node name="Bullet" type="Node3D" node_paths=PackedStringArray("BulletMash", "BulletRayCast", "Particles", "Timer")]
 script = ExtResource("1_hx4fg")
+BulletMash = NodePath("MeshInstance3D")
+BulletRayCast = NodePath("BulletRayCast")
+Particles = NodePath("GPUParticles3D")
+Timer = NodePath("Timer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.5, 0, 0, 0)
@@ -20,3 +34,14 @@ mesh = SubResource("BoxMesh_mspct")
 
 [node name="BulletRayCast" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.5)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25415)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_odgxj")
+draw_pass_1 = SubResource("BoxMesh_2vp6b")
+
+[node name="Timer" type="Timer" parent="."]
