@@ -1,8 +1,9 @@
+Button
+Label
 StaticBody3D
 AnimationPlayer
 Timer
 Node3D
-Label
 MeshInstance3D
 GPUParticles3D
 RayCast3D
