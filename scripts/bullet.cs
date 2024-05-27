@@ -46,7 +46,8 @@ public partial class bullet : Node3D
 
                     if (collider is GreenTarget) gui.Points += 10;
                     if (collider is OrangeTarget) gui.Points += 50;
-                    
+                    if (collider is RedTarget) gui.Points += 150;
+
                 }
             }
 

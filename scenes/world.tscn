@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d18royxqhjx55"]
+[gd_scene load_steps=18 format=3 uid="uid://d18royxqhjx55"]
 
 [ext_resource type="PackedScene" uid="uid://drrjf7imlsqro" path="res://scenes/FPC.tscn" id="1_ndbmi"]
 [ext_resource type="Script" path="res://scripts/World.cs" id="1_t343o"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cfa8vk1if30pl" path="res://resourses/textures/Dark/texture_09.png" id="5_k3hyk"]
 [ext_resource type="PackedScene" uid="uid://570s151bm1uu" path="res://scenes/targets/orange_target.tscn" id="6_6kve2"]
 [ext_resource type="PackedScene" uid="uid://cigwjikitu22" path="res://scenes/targets/green_target.tscn" id="6_ihs3m"]
+[ext_resource type="PackedScene" uid="uid://da8qlb0hdaetn" path="res://scenes/targets/red_target.tscn" id="7_dlxxn"]
 [ext_resource type="PackedScene" uid="uid://c8rxspf3gc0f2" path="res://scenes/GUI.tscn" id="8_gpno5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nx5rh"]
@@ -65,13 +66,25 @@ environment = SubResource("Environment_82d5r")
 [node name="poligon" type="Node3D" parent="Level"]
 
 [node name="floor" type="CSGBox3D" parent="Level/poligon"]
-transform = Transform3D(200, 0, 0, 0, 0.5, 0, 0, 0, 200, 0, -0.25, 0)
+transform = Transform3D(200, 0, 0, 0, 0.5, 0, 0, 0, 200, -1.97754, -0.25, 33.8867)
 use_collision = true
+size = Vector3(0.423096, 1, 0.227539)
 material = SubResource("StandardMaterial3D_t82vn")
 
 [node name="box2" type="CSGBox3D" parent="Level/poligon"]
 transform = Transform3D(1.42044, 0, 0, 0, 9.89652, 0.932911, 0, -15.0872, 0.611946, -8.77863, 2.83104, 34.2946)
 use_collision = true
+material = SubResource("StandardMaterial3D_mb3ji")
+
+[node name="box4" type="CSGBox3D" parent="Level/poligon"]
+transform = Transform3D(1.42044, 0, 0, 0, -5.43923, 0.66749, 0, -2.94455, -1.233, 16.1386, 2.16089, 30.511)
+use_collision = true
+material = SubResource("StandardMaterial3D_mb3ji")
+
+[node name="box5" type="CSGBox3D" parent="Level/poligon"]
+transform = Transform3D(1.42044, 0, 0, 0, -0.0184531, 1.40208, 0, -6.18509, -0.00418466, 12.7874, 3.85795, 33.8347)
+use_collision = true
+size = Vector3(1, 2.58447, 1)
 material = SubResource("StandardMaterial3D_mb3ji")
 
 [node name="box3" type="CSGBox3D" parent="Level/poligon"]
@@ -115,10 +128,13 @@ use_collision = true
 material = SubResource("StandardMaterial3D_nhr6t")
 
 [node name="wall8" type="CSGBox3D" parent="Level/poligon"]
-transform = Transform3D(-4.37114e-08, -10, 0, 1, -4.37114e-07, 0, 0, 0, 20, -5.56449, 7.89984, -10.8372)
+transform = Transform3D(-4.37114e-08, -10, 0, 1, -4.37114e-07, 0, 0, 0, 20, -5.56449, 7.89984, 34.4162)
 use_collision = true
 size = Vector3(1, 7.72754, 2.10181)
 material = SubResource("StandardMaterial3D_nhr6t")
+
+[node name="RedTarget" parent="Level/poligon" instance=ExtResource("7_dlxxn")]
+transform = Transform3D(-1.99229, -0.175424, 0, 0.175424, -1.99229, 0, 0, 0, 2, 26.9561, 5.74792, 31.6461)
 
 [node name="targets" type="Node3D" parent="Level"]
 
@@ -135,11 +151,29 @@ transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -12.66
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -15.2539, 2.87903, 28.4121)
 
 [node name="OrangeTarget" parent="Level/targets" instance=ExtResource("6_6kve2")]
-transform = Transform3D(-5, 7.54979e-07, 0, -7.54979e-07, -5, 0, 0, 0, 5, 7.89197, 7.67015, 34.1677)
+transform = Transform3D(-3, 4.52987e-07, 0, -4.52987e-07, -3, 0, 0, 0, 3, 7.89197, 7.67015, 34.1677)
 
 [node name="OrangeTarget2" parent="Level/targets" node_paths=PackedStringArray("Collision") instance=ExtResource("6_6kve2")]
-transform = Transform3D(-5, 7.54979e-07, 0, -7.54979e-07, -5, 0, 0, 0, 5, 7.89197, 3.68391, 34.2692)
+transform = Transform3D(-3, 4.52987e-07, 0, -4.52987e-07, -3, 0, 0, 0, 3, 7.89197, 0.52183, 34.4053)
 Collision = NodePath("../OrangeTarget/CollisionShape3D")
+
+[node name="RedTarget" parent="Level/targets" instance=ExtResource("7_dlxxn")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 28.2369, 5.7831, 39.0257)
+
+[node name="RedTarget2" parent="Level/targets" instance=ExtResource("7_dlxxn")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 26.2338, 0.40679, 27.8516)
+
+[node name="GreenTarget5" parent="Level/targets" instance=ExtResource("6_ihs3m")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, -9.11887, 5.0598, 28.2462)
+
+[node name="OrangeTarget3" parent="Level/targets" instance=ExtResource("6_6kve2")]
+transform = Transform3D(-2.99784, -0.113751, 0, 0.113751, -2.99784, 0, 0, 0, 3, 11.9161, 3.82881, 36.1904)
+
+[node name="OrangeTarget4" parent="Level/targets" instance=ExtResource("6_6kve2")]
+transform = Transform3D(-2.99992, 0.0216245, 0, -0.0216245, -2.99992, 0, 0, 0, 3, 11.8235, 3.83998, 33.7418)
+
+[node name="GreenTarget6" parent="Level/targets" instance=ExtResource("6_ihs3m")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 16.3671, 1.31029, 31.8215)
 
 [node name="FPC" parent="." instance=ExtResource("1_ndbmi")]
 transform = Transform3D(-0.0130896, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.0130896, -35.8404, 4.26767, 29.4709)

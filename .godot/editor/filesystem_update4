@@ -13,3 +13,5 @@ res://scripts/GreenTarget.cs
 res://scripts/BaseTarget.cs
 res://scenes/targets/orange_target.tscn
 res://scripts/OrangeTarget.cs
+res://scenes/targets/red_target.tscn
+res://scripts/RedTarget.cs

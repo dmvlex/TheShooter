@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716828494
+::res://::1716828504
 ::res://Properties/::1716734895
 launchSettings.json::JSON::-1::1716735844::0::1::::<><>::
 ::res://resourses/::1716733059
@@ -83,7 +83,7 @@ texture_12.png::CompressedTexture2D::1161071101629256226::1716758385::1716758386
 texture_13.png::CompressedTexture2D::3913643845326636537::1716758385::1716758386::1::::<><>::
 ::res://resourses/textures/Red/::1716758627
 texture_01.png::CompressedTexture2D::3880342083522365452::1716758385::1716758627::1::::<><>::
-texture_02.png::CompressedTexture2D::8729710795497769099::1716758385::1716758386::1::::<><>::
+texture_02.png::CompressedTexture2D::8729710795497769099::1716758385::1716829468::1::::<><>::
 texture_03.png::CompressedTexture2D::6016550219335697941::1716758385::1716758386::1::::<><>::
 texture_04.png::CompressedTexture2D::3360402737797149061::1716758385::1716758386::1::::<><>::
 texture_05.png::CompressedTexture2D::352902643263818991::1716758385::1716758386::1::::<><>::
@@ -95,23 +95,24 @@ texture_10.png::CompressedTexture2D::2081907834566225019::1716758385::1716758386
 texture_11.png::CompressedTexture2D::6719989304273588430::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::9162053228590132897::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::3023571368818307125::1716758385::1716758386::1::::<><>::
-::res://scenes/::1716828494
-FPC.tscn::PackedScene::8388123890315583824::1716828439::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
-GUI.tscn::PackedScene::7125597061238795609::1716828439::0::1::::<><>::res://scripts/GUI.cs
-Sifi_gun.tscn::PackedScene::537494382735786680::1716828439::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
+::res://scenes/::1716829251
+bullet.tscn::PackedScene::4416653123451718343::1716829251::0::1::::<><>::res://scripts/bullet.cs
+FPC.tscn::PackedScene::8388123890315583824::1716829251::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
+GUI.tscn::PackedScene::7125597061238795609::1716829251::0::1::::<><>::res://scripts/GUI.cs
+Sifi_gun.tscn::PackedScene::537494382735786680::1716829251::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
 steampunkRifle.tscn::PackedScene::6926627145066211996::1716750629::0::1::::<><>::uid://na4pgu5t2h0s::::res://resourses/objects/Steampunk Rifle.glb
-world.tscn::PackedScene::9053354938371423726::1716828439::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://b4ceic8hekhio::::res://resourses/textures/Light/texture_07.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs<>uid://cfa8vk1if30pl::::res://resourses/textures/Dark/texture_09.png<>uid://570s151bm1uu::::res://scenes/targets/orange_target.tscn<>uid://cigwjikitu22::::res://scenes/targets/green_target.tscn<>uid://c8rxspf3gc0f2::::res://scenes/GUI.tscn
-::res://scenes/targets/::1716828494
-bullet.tscn::PackedScene::4416653123451718343::1716828439::0::1::::<><>::res://scripts/bullet.cs
-green_target.tscn::PackedScene::157296784265451865::1716828439::0::1::::<><>::res://scripts/GreenTarget.cs<>uid://bqxilf8xsn0lp::::res://resourses/textures/Green/texture_06.png
-orange_target.tscn::PackedScene::2173276879514730068::1716828439::0::1::::<><>::uid://ofypa060808d::::res://resourses/textures/Orange/texture_02.png<>res://scripts/OrangeTarget.cs
-::res://scripts/::1716828323
-BaseTarget.cs::CSharpScript::-1::1716826844::0::1::::<>StaticBody3D<>::
+world.tscn::PackedScene::9053354938371423726::1716829301::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://b4ceic8hekhio::::res://resourses/textures/Light/texture_07.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs<>uid://cfa8vk1if30pl::::res://resourses/textures/Dark/texture_09.png<>uid://570s151bm1uu::::res://scenes/targets/orange_target.tscn<>uid://cigwjikitu22::::res://scenes/targets/green_target.tscn<>uid://c8rxspf3gc0f2::::res://scenes/GUI.tscn
+::res://scenes/targets/::1716829251
+green_target.tscn::PackedScene::157296784265451865::1716829251::0::1::::<><>::res://scripts/GreenTarget.cs<>uid://bqxilf8xsn0lp::::res://resourses/textures/Green/texture_06.png
+orange_target.tscn::PackedScene::2173276879514730068::1716829251::0::1::::<><>::uid://ofypa060808d::::res://resourses/textures/Orange/texture_02.png<>res://scripts/OrangeTarget.cs
+red_target.tscn::PackedScene::7228377724046015859::1716829415::0::1::::<><>::uid://blalc4o6fkk1e::::res://resourses/objects/target/targetB.glb
+::res://scripts/::1716828732
+BaseTarget.cs::CSharpScript::-1::1716828699::0::1::::<>StaticBody3D<>::
 bullet.cs::CSharpScript::-1::1716828323::0::1::::<>Node3D<>::
 FPC.cs::CSharpScript::-1::1716761109::0::1::::<>CharacterBody3D<>::
-GreenTarget.cs::CSharpScript::-1::1716825296::0::1::::<>StaticBody3D<>::
+GreenTarget.cs::CSharpScript::-1::1716828703::0::1::::<>StaticBody3D<>::
 GUI.cs::CSharpScript::-1::1716768743::0::1::::<>Control<>::
-OrangeTarget.cs::CSharpScript::-1::1716828266::0::1::::<>StaticBody3D<>::
+OrangeTarget.cs::CSharpScript::-1::1716828732::0::1::::<>StaticBody3D<>::
 PlayerMovement.cs::CSharpScript::-1::1716769137::0::1::::<><>::
 PlayerMovementConfig.cs::CSharpScript::-1::1716752354::0::1::::PlayerMovementConfig<>Resource<>::
 World.cs::CSharpScript::-1::1716733891::0::1::::<>Node3D<>::
