@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8rxspf3gc0f2"]
+[gd_scene load_steps=6 format=3 uid="uid://c8rxspf3gc0f2"]
 
 [ext_resource type="Script" path="res://scripts/GUI.cs" id="1_mqw42"]
 
@@ -7,30 +7,77 @@ font_size = 45
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Gui" type="Control" node_paths=PackedStringArray("PointsOutput")]
+[sub_resource type="LabelSettings" id="LabelSettings_0bw5j"]
+font_size = 60
+font_color = Color(1, 0.207843, 0.0352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6f5xp"]
+font_size = 25
+font_color = Color(1, 0.207843, 0.0352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_40guu"]
+font_size = 30
+font_color = Color(1, 0.207843, 0.0352941, 1)
+outline_size = 12
+outline_color = Color(1, 0.207843, 0.0352941, 1)
+
+[node name="Gui" type="Control" node_paths=PackedStringArray("PointsOutput", "Warning", "AmmoOutput", "MagsOutput")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_mqw42")
 PointsOutput = NodePath("count")
+Warning = NodePath("reloadWarning")
+AmmoOutput = NodePath("ammo")
+MagsOutput = NodePath("mags")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 577.0
-offset_right = 145.0
-offset_bottom = 640.0
+offset_left = 823.0
+offset_top = 17.0
+offset_right = 954.0
+offset_bottom = 80.0
 text = "Очки:"
 label_settings = SubResource("LabelSettings_4qqve")
 
 [node name="count" type="Label" parent="."]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 579.0
-offset_right = 285.0
-offset_bottom = 642.0
+offset_left = 980.0
+offset_top = 18.0
+offset_right = 1111.0
+offset_bottom = 81.0
 text = "0"
 label_settings = SubResource("LabelSettings_4qqve")
+
+[node name="ammo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1094.0
+offset_right = 223.0
+offset_bottom = 1193.0
+text = "n/n"
+label_settings = SubResource("LabelSettings_0bw5j")
+
+[node name="reloadWarning" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 1044.0
+offset_right = 225.0
+offset_bottom = 1086.0
+text = "[R] - перезарядка"
+label_settings = SubResource("LabelSettings_6f5xp")
+
+[node name="mags" type="Label" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 1118.0
+offset_right = 318.0
+offset_bottom = 1160.0
+scale = Vector2(1.10249, 1)
+text = "||||"
+label_settings = SubResource("LabelSettings_40guu")

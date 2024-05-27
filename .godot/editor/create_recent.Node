@@ -12,4 +12,3 @@ CSGBox3D
 DirectionalLight3D
 WorldEnvironment
 Camera3D
-CollisionShape3D

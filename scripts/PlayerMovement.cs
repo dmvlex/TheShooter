@@ -21,6 +21,7 @@ public class PlayerMovement
     private IEnumerable<Node> gunsCollection;
     private PackedScene bullet;
     private Camera3D eyeCamera;
+    private GUI gui;
     private CollisionShape3D sneakCollision;
     private CollisionShape3D standCollision;
     private RayCast3D topRayCast;
@@ -37,6 +38,7 @@ public class PlayerMovement
 	{
         bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
         head = config.RootNode.GetNode<Node3D>("Head");
+        gui = config.RootNode.GetTree().CurrentScene.GetNode<GUI>("Gui");
         eyeCamera = head.GetNode<Camera3D>("EyeCamera");
         gunsCollection = eyeCamera.GetNode<Node3D>("Guns").GetChildren();
         standCollision = config.RootNode
@@ -93,8 +95,12 @@ public class PlayerMovement
         var animation = Gun.GetNode<AnimationPlayer>("Animation");
         if (Input.IsActionJustPressed("Reload"))
         {
+            if (gui.AmmoMags == 0) return;
+
             shootBlock = true;
             animation.Play("reload");
+            gui.CurrentAmmo = gui.MaxAmmo;
+            gui.AmmoMags -= 1;
             shootBlock = false;
         }
     }
@@ -113,6 +119,16 @@ public class PlayerMovement
             newBulletTransform.Basis = barrel.GlobalTransform.Basis;
             curBullet.Transform = newBulletTransform;
 
+            if (gui.CurrentAmmo > 0)
+            {
+                gui.CurrentAmmo -= 1;
+            }
+            else
+            {
+                shootBlock = true;
+            }
+
+            
             root.GetParent().AddChild(curBullet);
         }
     }

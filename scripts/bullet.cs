@@ -7,7 +7,6 @@ public partial class bullet : Node3D
 
     [Export]
     public MeshInstance3D BulletMash { get; set; }
-
     [Export]
 	public RayCast3D BulletRayCast { get; set; }
 	[Export]
