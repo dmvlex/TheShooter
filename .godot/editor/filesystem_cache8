@@ -1,13 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716752136
+::res://::1716828494
 ::res://Properties/::1716734895
 launchSettings.json::JSON::-1::1716735844::0::1::::<><>::
 ::res://resourses/::1716733059
-::res://resourses/objects/::1716750687
+::res://resourses/objects/::1716819243
 Scifi Assault Rifle-j40c8VDdAQ.glb::PackedScene::4572410747330305164::1716750687::1716750687::1::::<><>::
 Steampunk Rifle.glb::PackedScene::914242894418934344::1716750524::1716750524::1::::<><>::
+::res://resourses/objects/target/::1716819256
+targetA.glb::PackedScene::1117045879557924276::1716819256::1716819256::1::::<><>::
+targetB.glb::PackedScene::3159170968439699488::1716819256::1716819256::1::::<><>::
+targetSmall.glb::PackedScene::4259218837251725429::1716819256::1716819256::1::::<><>::
 ::res://resourses/textures/::1716758385
-::res://resourses/textures/Dark/::1716758442
+::res://resourses/textures/Dark/::1716818013
 texture_01.png::CompressedTexture2D::2788487839062031023::1716758385::1716758386::1::::<><>::
 texture_02.png::CompressedTexture2D::8559173726937739454::1716758385::1716758386::1::::<><>::
 texture_03.png::CompressedTexture2D::1048241301915843709::1716758385::1716758386::1::::<><>::
@@ -16,18 +20,18 @@ texture_05.png::CompressedTexture2D::2593243152093349118::1716758385::1716758386
 texture_06.png::CompressedTexture2D::4773948690080291715::1716758385::1716758386::1::::<><>::
 texture_07.png::CompressedTexture2D::5312841190339604450::1716758385::1716758386::1::::<><>::
 texture_08.png::CompressedTexture2D::1116579976853054622::1716758385::1716758442::1::::<><>::
-texture_09.png::CompressedTexture2D::5125827313779371421::1716758385::1716758386::1::::<><>::
+texture_09.png::CompressedTexture2D::5125827313779371421::1716758385::1716818013::1::::<><>::
 texture_10.png::CompressedTexture2D::900799500515529146::1716758385::1716758386::1::::<><>::
 texture_11.png::CompressedTexture2D::204121807681633554::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::3303617133947916202::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::4037492575846131606::1716758385::1716758386::1::::<><>::
-::res://resourses/textures/Green/::1716758569
+::res://resourses/textures/Green/::1716819367
 texture_01.png::CompressedTexture2D::2410752789148146951::1716758385::1716758386::1::::<><>::
 texture_02.png::CompressedTexture2D::646930163456660121::1716758385::1716758386::1::::<><>::
 texture_03.png::CompressedTexture2D::2943368158409601597::1716758385::1716758386::1::::<><>::
 texture_04.png::CompressedTexture2D::8629661453653257450::1716758385::1716758386::1::::<><>::
 texture_05.png::CompressedTexture2D::4172284495686708120::1716758385::1716758386::1::::<><>::
-texture_06.png::CompressedTexture2D::3557428564584985105::1716758385::1716758386::1::::<><>::
+texture_06.png::CompressedTexture2D::3557428564584985105::1716758385::1716819367::1::::<><>::
 texture_07.png::CompressedTexture2D::6122902956885806754::1716758385::1716758386::1::::<><>::
 texture_08.png::CompressedTexture2D::8521558495384540010::1716758385::1716758386::1::::<><>::
 texture_09.png::CompressedTexture2D::8953910654866554769::1716758385::1716758569::1::::<><>::
@@ -49,9 +53,9 @@ texture_10.png::CompressedTexture2D::78324816451241196::1716758385::1716758386::
 texture_11.png::CompressedTexture2D::3088382614953315947::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::6969602893513307129::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::1227600719252762580::1716758385::1716758386::1::::<><>::
-::res://resourses/textures/Orange/::1716758386
+::res://resourses/textures/Orange/::1716828182
 texture_01.png::CompressedTexture2D::2658579060304833690::1716758385::1716758386::1::::<><>::
-texture_02.png::CompressedTexture2D::994449734501064833::1716758385::1716758386::1::::<><>::
+texture_02.png::CompressedTexture2D::994449734501064833::1716758385::1716828182::1::::<><>::
 texture_03.png::CompressedTexture2D::4546046636084749401::1716758385::1716758386::1::::<><>::
 texture_04.png::CompressedTexture2D::6286523879153538694::1716758385::1716758386::1::::<><>::
 texture_05.png::CompressedTexture2D::8864193308103804491::1716758385::1716758386::1::::<><>::
@@ -63,7 +67,7 @@ texture_10.png::CompressedTexture2D::7765712093798340407::1716758385::1716758386
 texture_11.png::CompressedTexture2D::1438828781830370783::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::7601068725950726457::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::5302518754639783340::1716758385::1716758386::1::::<><>::
-::res://resourses/textures/Purple/::1716758386
+::res://resourses/textures/Purple/::1716761447
 texture_01.png::CompressedTexture2D::8546919002616926886::1716758385::1716758386::1::::<><>::
 texture_02.png::CompressedTexture2D::1273365406546600114::1716758385::1716758386::1::::<><>::
 texture_03.png::CompressedTexture2D::4329585261556157497::1716758385::1716758386::1::::<><>::
@@ -91,15 +95,23 @@ texture_10.png::CompressedTexture2D::2081907834566225019::1716758385::1716758386
 texture_11.png::CompressedTexture2D::6719989304273588430::1716758385::1716758386::1::::<><>::
 texture_12.png::CompressedTexture2D::9162053228590132897::1716758385::1716758386::1::::<><>::
 texture_13.png::CompressedTexture2D::3023571368818307125::1716758385::1716758386::1::::<><>::
-::res://scenes/::1716761321
-FPC.tscn::PackedScene::8388123890315583824::1716761321::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
-bullet.tscn::PackedScene::4416653123451718343::1716761298::0::1::::<><>::res://scripts/bullet.cs
-Sifi_gun.tscn::PackedScene::537494382735786680::1716761298::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
+::res://scenes/::1716828494
+FPC.tscn::PackedScene::8388123890315583824::1716828439::0::1::::<><>::res://scripts/FPC.cs<>res://scripts/PlayerMovementConfig.cs<>uid://hwmpo1icm0n1::::res://scenes/Sifi_gun.tscn
+GUI.tscn::PackedScene::7125597061238795609::1716828439::0::1::::<><>::res://scripts/GUI.cs
+Sifi_gun.tscn::PackedScene::537494382735786680::1716828439::0::1::::<><>::uid://b6e564eya223q::::res://resourses/objects/Scifi Assault Rifle-j40c8VDdAQ.glb
 steampunkRifle.tscn::PackedScene::6926627145066211996::1716750629::0::1::::<><>::uid://na4pgu5t2h0s::::res://resourses/objects/Steampunk Rifle.glb
-world.tscn::PackedScene::9053354938371423726::1716761298::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://b4ceic8hekhio::::res://resourses/textures/Light/texture_07.png<>uid://p54555wg4xus::::res://resourses/textures/Dark/texture_08.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs
-::res://scripts/::1716761109
+world.tscn::PackedScene::9053354938371423726::1716828439::0::1::::<><>::uid://drrjf7imlsqro::::res://scenes/FPC.tscn<>res://scripts/World.cs<>uid://b4ceic8hekhio::::res://resourses/textures/Light/texture_07.png<>uid://bvjwwxji0clhs::::res://resourses/textures/Red/texture_01.png<>res://scripts/PlayerMovementConfig.cs<>uid://cfa8vk1if30pl::::res://resourses/textures/Dark/texture_09.png<>uid://570s151bm1uu::::res://scenes/targets/orange_target.tscn<>uid://cigwjikitu22::::res://scenes/targets/green_target.tscn<>uid://c8rxspf3gc0f2::::res://scenes/GUI.tscn
+::res://scenes/targets/::1716828494
+bullet.tscn::PackedScene::4416653123451718343::1716828439::0::1::::<><>::res://scripts/bullet.cs
+green_target.tscn::PackedScene::157296784265451865::1716828439::0::1::::<><>::res://scripts/GreenTarget.cs<>uid://bqxilf8xsn0lp::::res://resourses/textures/Green/texture_06.png
+orange_target.tscn::PackedScene::2173276879514730068::1716828439::0::1::::<><>::uid://ofypa060808d::::res://resourses/textures/Orange/texture_02.png<>res://scripts/OrangeTarget.cs
+::res://scripts/::1716828323
+BaseTarget.cs::CSharpScript::-1::1716826844::0::1::::<>StaticBody3D<>::
+bullet.cs::CSharpScript::-1::1716828323::0::1::::<>Node3D<>::
 FPC.cs::CSharpScript::-1::1716761109::0::1::::<>CharacterBody3D<>::
-PlayerMovement.cs::CSharpScript::-1::1716748377::0::1::::<><>::
+GreenTarget.cs::CSharpScript::-1::1716825296::0::1::::<>StaticBody3D<>::
+GUI.cs::CSharpScript::-1::1716768743::0::1::::<>Control<>::
+OrangeTarget.cs::CSharpScript::-1::1716828266::0::1::::<>StaticBody3D<>::
+PlayerMovement.cs::CSharpScript::-1::1716769137::0::1::::<><>::
 PlayerMovementConfig.cs::CSharpScript::-1::1716752354::0::1::::PlayerMovementConfig<>Resource<>::
-bullet.cs::CSharpScript::-1::1716760666::0::1::::<>Node3D<>::
 World.cs::CSharpScript::-1::1716733891::0::1::::<>Node3D<>::

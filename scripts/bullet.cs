@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using TheShooter.scripts;
 
 public partial class bullet : Node3D
 {
@@ -35,12 +36,18 @@ public partial class bullet : Node3D
         Position += Transform.Basis * vec;
 		if (BulletRayCast.IsColliding())
 		{
-            var collider = (StaticBody3D)BulletRayCast.GetCollider();
-
-            if (collider.IsInGroup("targets"))
+            if (BulletRayCast.GetCollider() is BaseTarget collider)
             {
                 var gui = (GUI)GetTree().CurrentScene.GetNode("Gui");
-                gui.Points += 1;
+                
+                if (collider.EnabledToShot)
+                {
+                    collider.DetectShoot();
+
+                    if (collider is GreenTarget) gui.Points += 10;
+                    if (collider is OrangeTarget) gui.Points += 50;
+                    
+                }
             }
 
 			BulletMash.Visible = false;

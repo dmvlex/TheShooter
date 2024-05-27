@@ -1,11 +1,11 @@
-Label
-MeshInstance3D
+AnimationPlayer
 StaticBody3D
 Timer
+Node3D
+Label
+MeshInstance3D
 GPUParticles3D
 RayCast3D
-AnimationPlayer
-Node3D
 GPUParticlesCollisionSDF3D
 ResourcePreloader
 CSGBox3D
